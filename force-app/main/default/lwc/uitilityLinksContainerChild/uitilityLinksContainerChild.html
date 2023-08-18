@@ -1,0 +1,7 @@
+<template>
+    <template if:true={receivedData}>
+        <template for:each={receivedData} for:item="item">
+            <c-utility-links-child key={item.Id} link-data={item}></c-utility-links-child>
+        </template>
+    </template>
+</template>

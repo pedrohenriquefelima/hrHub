@@ -1,0 +1,8 @@
+<template>
+    <div class="round-circle-container" onclick={handleClick}>
+        <div class="round-circle-image">
+            <img src={linkData.ImageAddress__c} />
+        </div>
+        <div class="text-title"><a href={linkData.URL_Address__c} target="_blank">{linkData.User_Facing_Label__c}</a></div>
+    </div>
+</template>

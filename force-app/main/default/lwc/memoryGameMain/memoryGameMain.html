@@ -1,0 +1,63 @@
+<template>
+    <div class="slds-grid slds-gutters">
+        <div class="slds-col slds-size_3-of-6">
+                <lightning-card title="Memory Game">
+                    <div class="slds-var-p-around_medium container">
+                        <section class="score-panel">
+                            <span class="moves">{moves}</span> Move(s)
+                            <div class="timer">{totalTime}</div>
+                            <div class="restart" onclick={shuffle}>
+                                <i class="fa fa-repeat" aria-hidden="true"></i>
+                            </div>
+                        </section>
+                        <section class="game-panel">
+                            <ul class="deck card-deck grid-container">
+                                <template for:each={cards} for:item="card">
+                                    <li class={card.listClass} type={card.type} key={card.id} onclick={showIconHandler}>
+                                        <i class={card.icon}></i>
+                                    </li>
+                                </template>
+                            </ul>
+                            <template if:true={showCongratulations}>
+                                <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+                                    <div class="slds-modal__container">
+                                        <header class="slds-modal__header">
+                                            <h2 id="modal-heading-01" class="slds-modal__title slds-hyphenate">Congratulations you're a winner 🎉 🎉
+                                            </h2>
+                                        </header>
+                                    <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+                                    <p>You made <strong>{moves}</strong> moves in {totalTime}</p>
+                                    <p>Your rating:
+                                        <template for:each={gameRating} for:item="rating">
+                                            <i class="fa fa-star" key={rating}></i>
+                                        </template>
+                                    </p>
+                                </div>
+                                <footer class="slds-modal__footer">
+                                    <button class="slds-button slds-button_brand" onclick={shuffle}>Play Again</button>
+                                </footer>
+                                </div>
+                                    </section>
+                                <div class="slds-backdrop slds-backdrop_open"></div>
+                            </template>
+                        </section>
+                    </div>
+                </lightning-card>
+        </div>
+        <div class="slds-col slds-size_3-of-6">
+            <lightning-card title="Board Game" >
+                <template for:each={boardData} for:item="item">
+                    <div key={item.Id} class="game-item">
+                        <div class="two-columns">
+                            <p>{item.Name}</p>
+                            <p>Date: {item.CreatedDate}</p>
+                        </div>
+                        <p>Player: {item.Player__r.FirstName} {item.Player__r.LastName}</p>
+                        <p>Duration: {item.Duration__c}</p>
+                        <p>Moves: {item.Moves__c}</p>
+                    </div>
+                </template>
+            </lightning-card>
+        </div>
+    </div>
+</template>

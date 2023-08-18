@@ -1,0 +1,13 @@
+<template>
+    <template if:true={utilityLinksData}>
+        <lightning-card title="Utility Links/Quick Access">
+            <div class="parent-container">
+                <template for:each={utilityLinksData} for:item="array">
+                    <c-uitility-links-container-child key={array.id} received-data={array.data} class="flex-mid-container"></c-uitility-links-container-child>
+                </template>
+            </div>
+            <hr>
+            <div class="show-more" onclick={showMoreItemHandler}>{buttonLabel}</div>
+        </lightning-card>
+    </template>
+</template>
