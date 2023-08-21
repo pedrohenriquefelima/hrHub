@@ -1,0 +1,17 @@
+<template>
+    <lightning-card title="New Hires">
+        <lightning-combobox
+            name="Filter"
+            value={relativeDate}
+            placeholder="Select"
+            options={options}
+            onchange={handleChangeNewHire}
+            class="custom-combobox"
+            slot="actions">
+        </lightning-combobox>
+        <template for:each={userDataResults} for:item="item">
+            <c-user-card-item key={item.id} user-item-data={item}></c-user-card-item>
+        </template>
+       
+    </lightning-card>
+</template>

@@ -1,0 +1,17 @@
+<template>
+    <div class="container-item-custom">
+        <div class="outer-border">
+            <div class="custom-item-card">
+                <div class="round-circle-image">
+                    <img src={userItemData.SmallPhotoUrl} />
+                </div>
+                <div class="user-details">
+                    <div class="user-name">{userItemData.FirstName} {userItemData.LastName}</div>
+                    <div>{userItemData.UserRole.Name} | {userItemData.Title}</div>
+                    <div class="joined-date">{joinedDateUser}</div>
+                </div>
+               
+            </div>
+        </div>
+    </div>
+</template>

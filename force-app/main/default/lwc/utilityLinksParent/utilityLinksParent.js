@@ -19,8 +19,8 @@ export default class UtilityLinksParent extends LightningElement {
                     const firstRow = [];
                     firstRow.push(this.structuredData[0]);
                     this.utilityLinksData = firstRow;
-                    console.log('JSON string');
-                    console.log(JSON.stringify(this.utilityLinksData));
+                    // console.log('JSON string');
+                    // console.log(JSON.stringify(this.utilityLinksData));
                 }
             }
         } else if (error) {

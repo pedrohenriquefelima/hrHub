@@ -1,0 +1,51 @@
+.container-item-custom {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.outer-border {
+    width: 90%;
+    height: 90px;
+    margin: 0;
+    border-radius: 10px;
+    border-left: 5px green solid;
+}
+
+.custom-item-card {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 90px;
+    padding: 10px;
+    border-radius: 10px;
+    border-radius: 0 5px 5px 0;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.1);
+}
+
+.user-details {
+    flex-grow: 1;
+    padding-left: 15px;
+}
+
+.user-name {
+    font-weight: bold;
+}
+
+.round-circle-image {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 1px grey solid;
+}
+
+.round-circle-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.joined-date {
+    text-align: right;
+}
